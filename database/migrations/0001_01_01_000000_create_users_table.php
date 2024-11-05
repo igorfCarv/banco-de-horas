@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('setor_id')->nullable();
+            $table->unsignedBigInteger('supervisor_id')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -21,6 +23,10 @@ return new class extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
+            $table->string('matricula')->nullable();
+            $table->enum('regras', ['admin', 'supervisor', 'user'] )->default('user');
+            $table->enum('status', ['1', '0'] )->default('1');
+
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
