@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
             $table->string('matricula')->nullable();
-            $table->enum('regras', ['admin', 'supervisor', 'user'] )->default('user');
+            $table->enum('profile', ['admin', 'supervisor', 'user'] )->default('user');
             $table->enum('status', ['1', '0'] )->default('1');
 
         });

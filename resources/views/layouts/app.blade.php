@@ -22,7 +22,7 @@
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @livewire('navigation-menu')
             @include('side-menu')
-            <main class="lg:ms-[250px] md:ms-[250px]">
+            <main class="container lg:ms-[250px] md:ms-[250px]">
                 {{ $slot }}
             </main>
         </div>
